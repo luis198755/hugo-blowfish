@@ -260,14 +260,13 @@ Blowfish 提供了大量控制主题功能的配置参数，下面的表格中�
 | `list.showSummary`                 | `false` | 是否在列表页显示文章摘要。如果在[扉页参数]({{< ref "front-matter" >}})中没有提供摘要，那么将会使用[站点配置](#site-configuration) 中的 `summaryLength` 参数自动生成一个。 |
 | `list.showViews`                   | `false` | 是否显示文章阅读量。这需要集成 firebase ，具体可以看下面。                                                                                                                |
 | `list.showLikes`                   | `false` | 是否显示文章点赞量。这需要集成 firebase ，具体可以看下面。                                                                                                                |
-| `list.showCards`                   | `false` | 是否将每个文章显示未卡片或简单的内联文本。                                                                                                                                |
+| `list.showCards`                   | `false` | 是否将每个文章显示为卡片或简单的内联文本。                                                                                                                                |
 | `list.groupByYear`                 | `true`  | 是否根据年做聚合。                                                                                                                                                        |
 | `list.cardView`                    | `false` | 将列表展示为卡片容器。                                                                                                                                                    |
 | `list.cardViewScreenWidth`         | `false` | 增强列表中卡片的宽度，使其可以占据可用的全部宽度。                                                                                                                        |
 | `list.constrainItemsWidth`         | `false` | 将项目宽度限制为 `prose` 以提高可读性。在没有 featurn 图片的时候非常有用。                                                                                                |
-| `list.showTableOfContents`         | `false` | 是否显示目录。                                                                                                                                                            |
 
-### Sitemap
+### 网站地图
 
 | 名称                    | 默认值                 | 描述                                                                                                                                |
 | ----------------------- | ---------------------- | ----------------------------------------------------------------------------------------------------------------------------------- |
@@ -300,7 +299,7 @@ Blowfish 提供了大量控制主题功能的配置参数，下面的表格中�
 | `term.cardView`            | `false` | 将列表展示为卡片容器。                                                                     |
 | `term.cardViewScreenWidth` | `false` | 增强列表中卡片的宽度，使其可以占据可用的全部宽度。                                         |
 
-### Firebase
+### Firebase(Firebase 平台)
 
 | 名称                         | 默认值 | 描述                                                                                                                                          |
 | ---------------------------- | ------ | --------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -312,23 +311,31 @@ Blowfish 提供了大量控制主题功能的配置参数，下面的表格中�
 | `firebase.appId`             | 无     | Firebase appId，与 Firebase 集成的必填参数。了解如何将 Firebase 集成进 Blowfish 请参考 [这个页面]({{< ref "firebase-views" >}})。             |
 | `firebase.measurementId`     | 无     | Firebase measurementId，与 Firebase 集成的必填参数。了解如何将 Firebase 集成进 Blowfish 请参考 [这个页面]({{< ref "firebase-views" >}})。     |
 
-### Fathom Analytics
+### Fathom Analytics(一种网站分析工具)
 
 | 名称                     | 默认值 | 描述                                                                                        |
 | ------------------------ | ------ | ------------------------------------------------------------------------------------------- |
 | `fathomAnalytics.site`   | 无     | 支持 Fathom 站点分析平台。更多详细内容请参考 [分析文档]({{< ref "partials#analytics" >}})。 |
 | `fathomAnalytics.domain` | 无     | 如果使用自定义域名的 Fathom Analytics，请在此提供，以便从自定义域名获取 `script.js`。       |
 
-### Umami Analytics
+### Umami Analytics(一种网站分析工具)
 
-| Name                       | Default   | Description                                                                         |
-| -------------------------- | --------- |-------------------------------------------------------------------------------------|
-| `umamiAnalytics.websiteid` | _Not set_ | 支持 Umami 站点分析平台。更多详细内容请参考 [分析文档]({{< ref "partials#analytics" >}})。                 |
-| `umamiAnalytics.domain`    | _Not set_ | 如果使用自定义域名的 Umami Analytics，请在此提供，以便从自定义域名获取 `script.js`。                            |
-| `umamiAnalytics.dataDomains`    | _Not set_ | 如果你只想在特别的数个域名中使用 tracker 功能，那么你需要设置它。这个参数的值是逗号分隔的域名列表，如：yoursite.com,yoursite2.com。 |
+| Name                         | Default   | Description                                                                         |
+|------------------------------|-----------|-------------------------------------------------------------------------------------|
+| `umamiAnalytics.websiteid`   | 无         | 支持 Umami 站点分析平台。更多详细内容请参考 [分析文档]({{< ref "partials#analytics" >}})。                 |
+| `umamiAnalytics.domain`      | 无 | 如果使用自定义域名的 Umami Analytics，请在此提供，以便从自定义域名获取 `script.js`。                            |
+| `umamiAnalytics.dataDomains` | 无 | 如果你只想在特别的数个域名中使用 tracker 功能，那么你需要设置它。这个参数的值是逗号分隔的域名列表，如：yoursite.com,yoursite2.com。 |
+| `umamiAnalytics.enableTrackEvent` | true      | 默认会自动添加 Umami Track Event。如果你不想添加 Event，那学需要设置为 `false`。                            |
+
+### Seline Analytics
+
+| Name                              | Default | Description                                                              |
+|-----------------------------------|---------|--------------------------------------------------------------------------|
+| `selineAnalytics.token`           | 无 | Seline 站点分析平台的 token。更多详细内容请参考 [分析文档]({{< ref "partials#analytics" >}})。 |
+| `selineAnalytics.enableTrackEvent` | true    | 默认会自动添加 Umami Track Event。如果你不想添加 Event，那学需要设置为 `false`。                 |
 
 
-### BuyMeACoffee
+### BuyMeACoffee(赞助平台)
 
 | 名称                                | 默认值 | 描述                               |
 | ----------------------------------- | ------ | ---------------------------------- |
